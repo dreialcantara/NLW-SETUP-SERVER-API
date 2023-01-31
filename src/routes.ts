@@ -147,5 +147,13 @@ export async function appRoutes(app: FastifyInstance) {
 
     return summary
   })
+
+  app.delete('/habits', async () => {
+    await prisma.habit.deleteMany({})
+    return { message: 'Todos os hábitos foram excluídos com sucesso' }
+    })
+
+
+
 }
 
